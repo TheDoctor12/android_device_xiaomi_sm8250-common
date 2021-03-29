@@ -35,11 +35,3 @@ xiaomi_kona_fod_hal_binary {
     ],
     proprietary: true,
 }
-
-cc_library_static {
-    name: "libfod_extension.kona",
-    srcs: ["FodExtension.cpp"],
-    include_dirs: [
-        "frameworks/native/services/surfaceflinger/CompositionEngine/include"
-    ],
-}
