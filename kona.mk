@@ -346,7 +346,7 @@ PRODUCT_PACKAGES += \
     init.qti.dcvs.sh \
     init.qti.media.sh \
     init.qti.qcv.sh \
-    qca6234-service.sh \
+    qca6234-service.sh
 
 PRODUCT_PACKAGES += \
     init.qcom.factory.rc \
@@ -358,7 +358,7 @@ PRODUCT_PACKAGES += \
     init.target.rc \
     init.target.wigig.rc \
     fstab.qcom \
-    ueventd.qcom.rc \
+    ueventd.qcom.rc
 
 PRODUCT_COPY_FILES += \
     $(LOCAL_PATH)/rootdir/etc/fstab.qcom:$(TARGET_COPY_OUT_RAMDISK)/fstab.qcom
