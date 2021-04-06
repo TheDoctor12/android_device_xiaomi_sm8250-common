@@ -173,20 +173,20 @@ vendor/lib/hw/vendor.qti.hardware.capabilityconfigstore@1.0-impl.so
 # Consumer IR
 vendor/lib64/hw/consumerir.default.so
 
-# Display (HDR)
-vendor/lib64/libhdr_tm.so
+# Display (HDR) - from nio_retail-user 11 RRT31.Q1-20-43 6565b release-keys
+vendor/lib64/libhdr_tm.so|6bd08fd365bcbe5dc6388b3a99d108255ffa7e96
 
-# Display (SDM)
-vendor/lib64/libdisplayqos.so
-vendor/lib64/libdisplayskuutils.so
-vendor/lib64/libqseed3.so
-vendor/lib64/libsdedrm.so
-vendor/lib64/libsdm-color.so
-vendor/lib64/libsdm-colormgr-algo.so
-vendor/lib64/libsdm-diag.so
-vendor/lib64/libsdm-disp-vndapis.so
-vendor/lib64/libsdmextension.so
-vendor/lib64/libtinyxml2_1.so
+# Display (SDM) - from nio_retail-user 11 RRT31.Q1-20-43 6565b release-keys
+vendor/lib64/libdisplayqos.so|bcebd965c29e5cfbc64593b1dec1d64c3babf8ea
+vendor/lib64/libdisplayskuutils.so|70e7e4f4d13de8b7207b463eaf6c2405f9aacf3f
+vendor/lib64/libqseed3.so|34145a41496a3ade5ea2a3a4718998387e32e4e0
+vendor/lib64/libsdedrm.so|e82548af96029c944351f383ea0a094cee4be2b9
+vendor/lib64/libsdm-color.so|39bc2efef151052d6a8262c8428eb783e5272ec4
+vendor/lib64/libsdm-colormgr-algo.so|0a8cab76f8ff3cbd9d5e99e9303cea2c6e720719
+vendor/lib64/libsdm-diag.so|4552dd1f3c37a50bdbc94dd8c8ba8cd4c61f7cf7
+vendor/lib64/libsdm-disp-vndapis.so|62f49380c22d80a26b7a90ae73e828c0573a8941
+vendor/lib64/libsdmextension.so|421bb34c53142a27169a61b5ea48004f342d9366
+vendor/lib64/libtinyxml2_1.so|70cbe5d2a5529591f3195b7829a73bcf8229a620
 
 # Display postprocessing
 vendor/bin/hw/vendor.display.color@1.0-service
