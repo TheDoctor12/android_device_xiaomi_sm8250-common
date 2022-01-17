@@ -86,5 +86,28 @@
                 android:value="-255" />
         </activity>
 
+
+        <!-- Touch Responsiveness -->
+        <activity
+            android:name=".touchsampling.TouchSamplingSettingsActivity"
+            android:label="@string/htpr_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.system" />
+            <meta-data
+                android:name="com.android.settings.icon"
+                android:resource="@drawable/ic_htpr" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/htpr_summary" />
+            <meta-data
+                android:name="com.android.settings.order"
+                android:value="-15" />
+        </activity>
+
     </application>
 </manifest>
