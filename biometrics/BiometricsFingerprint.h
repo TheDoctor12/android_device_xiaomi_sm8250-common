@@ -73,6 +73,8 @@ public:
 
     // Methods from ::vendor::xiaomi::hardware::fingerprintextension::V1_0::IXiaomiFingerprint follow.
     Return<int32_t> extCmd(int32_t cmd, int32_t param) override;
+    Return<void> onShowUdfpsOverlay() override;
+    Return<void> onHideUdfpsOverlay() override;
 
 private:
     static xiaomi_fingerprint_device_t* openHal(const char *class_name);
