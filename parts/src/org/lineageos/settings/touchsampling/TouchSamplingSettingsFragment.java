@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2018 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -17,10 +17,10 @@
 package org.lineageos.settings.touchsampling;
 
 import android.os.Bundle;
+import android.view.MenuItem;
 import android.content.Context;
 import android.content.SharedPreferences;
 import android.provider.Settings;
-
 import androidx.preference.Preference;
 import androidx.preference.Preference.OnPreferenceChangeListener;
 import androidx.preference.PreferenceFragment;
@@ -33,7 +33,7 @@ import org.lineageos.settings.utils.FileUtils;
 public class TouchSamplingSettingsFragment extends PreferenceFragment implements
         OnPreferenceChangeListener {
 
-    private static final String HTPR_ENABLE_KEY = "htpr";
+    private static final String HTPR_ENABLE_KEY = "htpr_enable";
     public static final String SHAREDHTPR = "SHAREDHTPR";
 
     private SwitchPreference mHTPRPreference;
@@ -56,6 +56,15 @@ public class TouchSamplingSettingsFragment extends PreferenceFragment implements
         return true;
     }
 
+    @Override
+    public boolean onOptionsItemSelected(MenuItem item) {
+        if (item.getItemId() == android.R.id.home) {
+            getActivity().onBackPressed();
+            return true;
+        }
+        return false;
+    }
+
     private void enableHTPR(Integer enable) {
             FileUtils.writeLine(TouchSamplingUtils.HTPR_FILE, enable.toString());
             SharedPreferences preferences = getActivity().getSharedPreferences(SHAREDHTPR,Context.MODE_PRIVATE);
@@ -64,4 +73,3 @@ public class TouchSamplingSettingsFragment extends PreferenceFragment implements
             editor.commit();
     }
 }
-

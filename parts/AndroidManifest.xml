@@ -22,9 +22,13 @@
     android:sharedUserId="android.uid.system">
 
     <uses-permission android:name="android.permission.GET_TASKS" />
-    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
     <uses-permission android:name="android.permission.WAKE_LOCK" />
     <uses-permission android:name="android.permission.SYSTEM_ALERT_WINDOW" />
+    <uses-permission android:name="android.permission.DEVICE_POWER" />
+    <uses-permission android:name="android.permission.RECEIVE_BOOT_COMPLETED" />
+    <uses-permission android:name="android.permission.WRITE_SETTINGS" />
+    <uses-permission android:name="android.permission.WRITE_SECURE_SETTINGS" />
+    <uses-permission android:name="android.permission.INTERACT_ACROSS_USERS" />
 
     <protected-broadcast android:name="com.android.systemui.doze.pulse" />
 
@@ -38,59 +42,44 @@
         android:persistent="true"
         android:theme="@style/Theme.SubSettingsBase">
 
-        <receiver android:name=".BootCompletedReceiver">
-            <intent-filter>
+        <receiver android:name=".BootCompletedReceiver" >
+            <intent-filter android:priority="1000">
                 <action android:name="android.intent.action.BOOT_COMPLETED" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
         </receiver>
 
+        <!-- Ambient display options -->
         <service android:name=".doze.DozeService"
                  android:permission="XiaomiDozeService">
         </service>
-
-        <service
-            android:name=".popupcamera.PopupCameraService"
-            android:permission="PopupCameraService">
-        </service>
-
         <activity
             android:name=".doze.DozeSettingsActivity"
-            android:label="@string/ambient_display_title">
+            android:label="@string/ambient_display_title"
+            android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="org.lineageos.settings.device.DOZE_SETTINGS" />
                 <category android:name="android.intent.category.DEFAULT" />
             </intent-filter>
-        </activity>
-
-        <activity
-            android:name=".popupcamera.PopupCameraSettingsActivity"
-            android:label="@string/popup_title"
-            android:theme="@style/Theme.SubSettingsBase"
-            android:enabled="false">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
             </intent-filter>
-
             <meta-data
                 android:name="com.android.settings.category"
-                android:value="com.android.settings.category.ia.system" />
-            <meta-data
-                android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_settings_popup" />
+                android:value="com.android.settings.category.ia.display" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/summary_empty" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="-255" />
+                android:resource="@string/ambient_display_enable_summary" />
         </activity>
 
-
-        <!-- Touch Responsiveness -->
+        <!-- Popup camera -->
+        <service
+            android:name=".popupcamera.PopupCameraService"
+            android:permission="PopupCameraService">
+        </service>
         <activity
-            android:name=".touchsampling.TouchSamplingSettingsActivity"
-            android:label="@string/htpr_title"
+            android:name=".popupcamera.PopupCameraSettingsActivity"
+            android:label="@string/popup_title"
             android:theme="@style/Theme.SubSettingsBase">
             <intent-filter>
                 <action android:name="com.android.settings.action.IA_SETTINGS" />
@@ -100,14 +89,62 @@
                 android:value="com.android.settings.category.ia.system" />
             <meta-data
                 android:name="com.android.settings.icon"
-                android:resource="@drawable/ic_htpr" />
+                android:resource="@drawable/ic_popup" />
             <meta-data
                 android:name="com.android.settings.summary"
-                android:resource="@string/htpr_summary" />
-            <meta-data
-                android:name="com.android.settings.order"
-                android:value="-15" />
+                android:resource="@string/popup_summary" />
         </activity>
 
+        <!-- Thermal profiles -->
+        <service
+            android:name=".thermal.ThermalService"
+            android:permission="ThermalService">
+        </service>
+        <activity
+            android:name=".thermal.ThermalActivity"
+            android:label="@string/thermal_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.battery" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/thermal_summary" />
+        </activity>
+
+        <!-- HTPR -->
+        <activity
+            android:name=".touchsampling.TouchSamplingSettingsActivity"
+            android:label="@string/htpr_enable_title"
+            android:theme="@style/Theme.SubSettingsBase">
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.display" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/htpr_enable_summary" />
+        </activity>
+
+        <!-- Clear speaker -->
+        <activity
+            android:name=".speaker.ClearSpeakerActivity"
+            android:label="@string/clear_speaker_title"
+            android:theme="@style/Theme.SubSettingsBase" >
+            <intent-filter>
+                <action android:name="com.android.settings.action.IA_SETTINGS" />
+            </intent-filter>
+            <meta-data
+                android:name="com.android.settings.category"
+                android:value="com.android.settings.category.ia.sound" />
+            <meta-data
+                android:name="com.android.settings.summary"
+                android:resource="@string/clear_speaker_summary" />
+        </activity>
     </application>
 </manifest>

@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2017-2019 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,7 +24,6 @@ import android.content.SharedPreferences;
 import android.os.UserHandle;
 import android.provider.Settings;
 import android.util.Log;
-
 import androidx.preference.PreferenceManager;
 
 import org.lineageos.settings.utils.FileUtils;
@@ -46,4 +46,3 @@ public final class TouchSamplingUtils {
         FileUtils.writeLine(HTPR_FILE, htprstate.toString());
     }
 }
-

@@ -1,6 +1,6 @@
 /*
- * Copyright (C) 2015-2016 The CyanogenMod Project
- *               2017,2021 The LineageOS Project
+ * Copyright (C) 2015 The CyanogenMod Project
+ *               2017-2020 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -29,8 +29,7 @@ public class DozeSettingsActivity extends CollapsingToolbarBaseActivity {
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-
-        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+	    getFragmentManager().beginTransaction().replace(R.id.content_frame,
                 new DozeSettingsFragment(), TAG_DOZE).commit();
     }
 }

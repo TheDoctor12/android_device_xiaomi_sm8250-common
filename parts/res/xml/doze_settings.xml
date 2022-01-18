@@ -22,7 +22,7 @@
     <com.android.settingslib.widget.MainSwitchPreference
         android:defaultValue="false"
         android:key="doze_enable"
-        android:title="@string/ambient_enable" />
+        android:title="@string/ambient_display_enable_title" />
 
     <SwitchPreference
         android:key="always_on_display"
@@ -33,7 +33,7 @@
 
     <PreferenceCategory
         android:key="pickup_sensor"
-        android:title="@string/pickup_sensor_title">
+        android:title="@string/pick_up_gesture_title">
 
         <SwitchPreference
             android:key="gesture_pick_up"

@@ -1,5 +1,6 @@
 /*
- * Copyright (C) 2016 The CyanogenMod Project
+ * Copyright (C) 2015-2016 The CyanogenMod Project
+ *               2017 The LineageOS Project
  *
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -23,17 +24,12 @@ import com.android.settingslib.collapsingtoolbar.R;
 
 public class TouchSamplingSettingsActivity extends CollapsingToolbarBaseActivity {
 
-  private static final String TAG_HTPR = "touchsampling";
+    private static final String TAG_HTPR = "touchsampling";
 
-  @Override
-  protected void onCreate(Bundle savedInstanceState) {
-    super.onCreate(savedInstanceState);
-
-    getFragmentManager()
-        .beginTransaction()
-        .replace(R.id.content_frame,new TouchSamplingSettingsFragment(),
-                         TAG_HTPR)
-        .commit();
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        getFragmentManager().beginTransaction().replace(R.id.content_frame,
+                new TouchSamplingSettingsFragment(), TAG_HTPR).commit();
     }
 }
-

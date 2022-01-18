@@ -153,13 +153,13 @@ public final class FileUtils {
             ok = srcFile.renameTo(dstFile);
         } catch (SecurityException e) {
             Log.w(TAG,
-                    "SecurityException trying to rename " + srcPath + " to " + dstPath,
-                    e);
+                        "SecurityException trying to rename " + srcPath + " to " + dstPath,
+                        e);
         } catch (NullPointerException e) {
             Log.e(TAG,
-                    "NullPointerException trying to rename " + srcPath + " to " +
-                            dstPath,
-                    e);
+                        "NullPointerException trying to rename " + srcPath + " to " +
+                                dstPath,
+                        e);
         }
         return ok;
     }
