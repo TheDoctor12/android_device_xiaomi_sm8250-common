@@ -351,4 +351,7 @@
 
     <!-- Type of the udfps long press sensor. Empty if long press is not supported. -->
     <string name="config_dozeUdfpsLongPressSensorType" translatable="false">org.lineageos.sensor.virtualudfps</string>
+
+    <!-- Path to fast charging status file to detect whether an oem fast charger is active -->
+    <string name="config_oemFastChargerStatusPath" translatable="false">/sys/class/power_supply/bms/fastcharge_mode</string>
 </resources>
