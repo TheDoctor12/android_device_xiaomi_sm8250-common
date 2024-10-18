@@ -302,4 +302,8 @@
     <string-array name="config_oemFastChargerStatusPaths" translatable="false">
         <item>/sys/class/power_supply/bms/fastcharge_mode;1</item>
     </string-array>
+
+    <!-- the number of the max cached processes in the system. -->
+    <integer name="config_customizedMaxCachedProcesses">96</integer>
+
 </resources>
