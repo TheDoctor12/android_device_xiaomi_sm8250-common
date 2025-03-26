@@ -4,12 +4,11 @@
     "target_path": "hardware/xiaomi"
   },
   {
-    "repository": "PixelOS-Devices/android_kernel_xiaomi_sm8250",
+    "repository": "TheDoctor12/android_kernel_xiaomi_sm8250",
     "target_path": "kernel/xiaomi/sm8250"
   },
   {
-    "remote": "gitlab",
-    "repository": "NoPrincessHere/proprietary_vendor_xiaomi_sm8250-common",
+    "repository": "TheDoctor12/proprietary_vendor_xiaomi_sm8250-common",
     "target_path": "vendor/xiaomi/sm8250-common"
   }
 ]
