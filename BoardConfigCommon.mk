@@ -248,7 +248,7 @@ CONFIG_IEEE80211AX := true
 
 CONFIG_ACS := true
 CONFIG_IEEE80211AC := true
-CONFIG_IEEE80211AX := true
+WIFI_FEATURE_HOSTAPD_11AX := true
 
 # Inherit the proprietary files
 include vendor/xiaomi/sm8250-common/BoardConfigVendor.mk
