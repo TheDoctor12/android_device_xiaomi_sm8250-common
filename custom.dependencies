@@ -1,7 +1,7 @@
 [
   {
     "remote": "github",
-    "repository": "LineageOS/android_hardware_xiaomi",
+    "repository": "TheDoctor12/android_hardware_xiaomi",
     "target_path": "hardware/xiaomi"
   },
   {
@@ -10,9 +10,8 @@
     "target_path": "kernel/xiaomi/sm8250"
   },
   {
-    "repository": "TheMuppets/proprietary_vendor_xiaomi_sm8250-common",
+    "repository": "TheDoctor12/proprietary_vendor_xiaomi_sm8250-common",
     "target_path": "vendor/xiaomi/sm8250-common",
-    "groups": "muppets,muppets_alioth,muppets_apollon,muppets_cmi,muppets_lmi,muppets_munch,muppets_thyme,muppets_umi",
     "clone-depth": "1"
   }
 ]
