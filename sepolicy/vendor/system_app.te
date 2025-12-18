@@ -1,1 +1,7 @@
 r_dir_file(system_app, vendor_sysfs_battery_supply)
+
+allow system_app vendor_sysfs_graphics:file { getattr open read write };
+
+# Charge Bypass
+allow system_app vendor_sysfs_battery_supply:dir search;
+allow system_app vendor_sysfs_battery_supply:file { getattr open read write };
